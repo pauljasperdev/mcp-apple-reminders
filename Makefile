@@ -89,10 +89,10 @@ help:
 
 # ─── Setup & Installation ────────────────────────────────────────────
 
-## install: Install dependencies (stack-specific — lang-* skill extends this)
+## install: Create ./venv, install the package + dev extras, build native helpers
 install:
 	@echo "$(CYAN)Installing dependencies...$(RESET)"
-	@echo "$(YELLOW)  (stub — overlay a lang-* skill to fill this in; run 'make help-stack')$(RESET)"
+	@./install.sh
 	@echo "$(GREEN)Done.$(RESET)"
 
 ## env: Create .env from template if missing

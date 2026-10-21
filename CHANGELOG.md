@@ -22,6 +22,12 @@ Spec 002 is fully shipped (41 tools, phases 0–5). This session runs the CL-1 c
 Before code: read `AGENTS.md` → this file §0/§2/§3 → the audit synthesis `docs/audits/2026-05-29-post-spec-002-cleanup-audit/05-verify-and-expert-review-synthesis.md`. Prior session history (spec-002 build) lives in `CHANGELOG.md` + git log. Session memories worth reading: `mem:core`, `mem:suggested_commands`, `mem:task_completion`, `mem:global/agent_model_policy`.
 
 
+## [0.4.1] — 2026-10-21 — Agent: Claude Opus 5.5
+### Fixed
+- `pyproject.toml`: replaced the nonexistent `pyobjc-framework-Foundation` dependency with `pyobjc-framework-Cocoa` (which provides the `Foundation` module) — `pip install -e .` failed on a fresh clone.
+- `install.sh` now installs the `[dev]` extras (ruff, black, mypy, pytest) so `make lint` / `make typecheck` / the stop gate can run after install.
+- `make install` now runs `./install.sh` instead of a stub.
+
 ## [0.4.0] — 2026-09-06 — Agent: Claude Sonnet 5
 ### Changed
 - synced skeleton-owned scripts (check_architecture.py, check_module_rules.py) to agentic-skeleton 0.48.0; removed VIBE.yaml.bak stray backup

@@ -59,9 +59,10 @@ source venv/bin/activate
 echo "📦 Upgrading pip..."
 python -m pip install --upgrade pip --quiet
 
-# Install the package in development mode (deps resolve from pyproject.toml)
+# Install the package in development mode with the dev extras (ruff, black,
+# mypy, pytest) that `make lint` / `make typecheck` / the stop gate require.
 echo "📦 Installing mcp-apple-reminders..."
-python -m pip install -e . --quiet
+python -m pip install -e ".[dev]" --quiet
 echo "✓ Package installed"
 echo ""
 
